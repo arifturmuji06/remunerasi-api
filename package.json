@@ -1,0 +1,16 @@
+{
+  "name": "remunerasi-api",
+  "version": "1.0.0",
+  "description": "Remunerasi REST API Node JS (MERN Stack)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "author": "Arif Turmuji",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10"
+  }
+}
