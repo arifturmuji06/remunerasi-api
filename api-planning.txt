@@ -1,0 +1,56 @@
+Standar API
+
+{root.api}/{version}/{grouping}/{endpoint}
+SAMPLE:
+http://remunerasi-api.teamcookies.studio/v1/auth/login
+
+Standar Status Response
+
+200 - OK                        --> Call API Success
+201 - CREATED                   --> Post Success
+400 - BAD REQUEST               --> Error on Client Side (Input salah dll)
+401 - UNAUTHORIZRD              --> User not authorized to the request
+403 - FORBIDDEN                 --> User not allowed to access
+404 - NOT FOUND                 --> Request Endpoint Not Found
+500 - INTERNAL SERVER ERROR     --> Error on Server Side
+502 - BAD GATEWAY               --> Invalid Response From Another Request
+
+GROUP: Authentication
+
+[1] - Register
+METHOD : POST
+{root.api}/{version}/auth/register
+
+req:
+{
+    "name": "Testing",
+    "email": "testing@mail.com",
+    "password": "123456"
+}
+
+res:
+{
+    "message": "Register Success",
+    "data": {
+        "id": 1,
+        "name": "Testing",
+        "email": "testing@mail.com",
+        "password": "123456",
+    }
+}
+
+err-response:
+400 --> Input yang dimasukan tidak valid
+
+[2] - Login
+METHOD POST
+
+GROUP: Admin Dashboard
+
+GROUP: Profile
+
+GROUP: Employee
+
+GROUP: Remunerasi
+
+GROUP:
