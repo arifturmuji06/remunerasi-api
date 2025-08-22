@@ -38,7 +38,7 @@ const UserSchema = new Schema({
   },
   profilePicture: {
     type: String,
-    default: "file/profile/1755426848310-gbla.jpg",
+    default: "file/profile/default.png",
   },
 });
 
