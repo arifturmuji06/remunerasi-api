@@ -43,12 +43,3 @@ const UserSchema = new Schema({
 });
 
 module.exports = mongoose.model("User", UserSchema, "user");
-
-//   name: String,
-//   email: { type: String, unique: true },
-//   password: String,
-//   role: { type: String, enum: ["admin", "karyawan"], default: "karyawan" },
-//   status: { type: String, enum: ["active", "inactive"], default: "active" },
-//   kontak: String,
-//   tahunMasuk: Number,
-//   image: String,
