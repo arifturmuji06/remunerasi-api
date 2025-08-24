@@ -37,6 +37,6 @@ router.post(
 );
 
 router.post("/login", authController.login);
-router.get("/me", isAuth, authController.me); // protected route
+router.get("/me", isAuth, authController.me);
 
 module.exports = router;

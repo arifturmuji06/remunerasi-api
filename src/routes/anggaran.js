@@ -4,9 +4,6 @@ const anggaranController = require("../controllers/anggaran");
 const isAuth = require("../middlewares/isAuth");
 const isAdmin = require("../middlewares/isAdmin");
 
-// Create anggaran tahunan per karyawan (satu karyawan satu anggaran per tahun)
-// router.post("/", isAuth, isAdmin, anggaranController.createAnggaran);
-
 // Create anggaran semua karyawan active (per tahun)
 router.post(
   "/generate-all",

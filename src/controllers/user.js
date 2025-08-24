@@ -2,7 +2,6 @@ const bcrypt = require("bcryptjs");
 const User = require("../models/user");
 const { validationResult } = require("express-validator");
 
-// Panggil semua User (Admin Only)
 exports.getAllUsers = async (req, res) => {
   try {
     const users = await User.find();
@@ -12,7 +11,6 @@ exports.getAllUsers = async (req, res) => {
   }
 };
 
-// Panggil semua User (Admin Only)
 exports.getLoginUser = async (req, res, next) => {
   try {
     const userId = req.user.userId;
@@ -29,7 +27,6 @@ exports.getLoginUser = async (req, res, next) => {
   }
 };
 
-// Panggil User by Id & Status Active (untuk form select karyawan)
 exports.getActiveUser = async (req, res) => {
   try {
     const users = await User.find({ status: "active" });
@@ -39,7 +36,6 @@ exports.getActiveUser = async (req, res) => {
   }
 };
 
-// Panggil User by Id & Status Inactive (untuk form select karyawan)
 exports.getInactiveUser = async (req, res) => {
   try {
     const users = await User.find({ status: "inactive" });
@@ -49,7 +45,6 @@ exports.getInactiveUser = async (req, res) => {
   }
 };
 
-// Panggil User by Id
 exports.getUserById = async (req, res) => {
   try {
     const user = await User.findById(req.params.id);
@@ -61,7 +56,6 @@ exports.getUserById = async (req, res) => {
   }
 };
 
-// Create Karyawan (Admin Only)
 exports.createUser = async (req, res, next) => {
   try {
     const errors = validationResult(req);
@@ -112,7 +106,6 @@ exports.createUser = async (req, res, next) => {
   }
 };
 
-// Update Data Karyawan (Admin Only)
 exports.updateUser = async (req, res, next) => {
   try {
     const { id } = req.params;
@@ -149,7 +142,6 @@ exports.updateUser = async (req, res, next) => {
   }
 };
 
-// Soft DELETE (Ganti status active -> inactive)
 exports.softDeleteUser = async (req, res) => {
   try {
     const updated = await User.findByIdAndUpdate(
@@ -165,7 +157,6 @@ exports.softDeleteUser = async (req, res) => {
   }
 };
 
-// Aktivasi kembali user (Ganti status inactive -> active)
 exports.reactivateUser = async (req, res, next) => {
   try {
     const updated = await User.findByIdAndUpdate(

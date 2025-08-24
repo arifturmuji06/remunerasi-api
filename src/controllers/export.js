@@ -4,7 +4,6 @@ const Remunerasi = require("../models/remunerasi");
 const Anggaran = require("../models/anggaran");
 const syncAnggaran = require("../helpers/syncAnggaran");
 
-// Summary PDF
 exports.exportSummaryAnggaranPDF = async (req, res) => {
   try {
     const tahun = parseInt(req.query.tahun) || new Date().getFullYear();
@@ -80,7 +79,6 @@ exports.exportSummaryAnggaranPDF = async (req, res) => {
   }
 };
 
-// Summary Excel
 exports.exportSummaryAnggaranExcel = async (req, res) => {
   try {
     const tahun = parseInt(req.query.tahun) || new Date().getFullYear();
@@ -152,7 +150,6 @@ exports.exportSummaryAnggaranExcel = async (req, res) => {
   }
 };
 
-// Remunerasi PDF
 exports.exportRemunerasiPDF = async (req, res) => {
   try {
     let periode = req.query.periode || new Date().getFullYear();
@@ -203,7 +200,6 @@ exports.exportRemunerasiPDF = async (req, res) => {
   }
 };
 
-// Remunerasi Excel
 exports.exportRemunerasiExcel = async (req, res) => {
   try {
     let periode = req.query.periode || new Date().getFullYear();
